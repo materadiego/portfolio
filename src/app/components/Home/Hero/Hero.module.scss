@@ -1,0 +1,179 @@
+@use "../../../scss/variables";
+.Hero {
+  height: 100svh;
+  position: relative;
+  z-index: 1;
+  background: #080808;
+}
+
+.content {
+  width: 100%;
+  height: 100lvw;
+  padding: 5% 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  position: relative;
+  top: 90lvw;
+}
+
+.title {
+  width: 100%;
+  margin: 0 0 2lvw;
+  font-size: 7lvw;
+  color: white;
+  background-image: linear-gradient(270deg, #02ffee, #ef2e68);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  width: 100%;
+  font-size: 3lvw;
+  margin: 0.5lvw 0;
+  color: #eeeeee;
+}
+
+.heroBgContainer {
+  width: 100%;
+  height: 90lvw;
+  top: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.heroBg {
+  width: 100%;
+  height: 90lvw;
+  position: relative;
+
+  & img {
+    object-fit: contain;
+    object-position: 0%;
+  }
+}
+
+.heroBgOverlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: #000000;
+  background: radial-gradient(
+    circle,
+    rgba(8, 8, 8, 0.07) 0%,
+    rgba(8, 8, 8, 0.96) 95%
+  );
+}
+
+.profileContainer {
+  width: 80lvw;
+  height: 32lvw;
+  margin: 0 10lvw;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  bottom: 1lvw;
+  z-index: 2;
+}
+
+.profileContainerTitle {
+  color: white;
+  font-size: 4.5lvw;
+  font-weight: 400;
+  margin-bottom: 0.5lvw;
+}
+
+.profileContainerText {
+  color: #bbbbbb;
+  margin: 0lvw 0 1lvw;
+  font-size: 3lvw;
+}
+
+.buttonIcon {
+  margin-right: 2lvw;
+  &__linkedin {
+    font-size: 3.5lvw;
+  }
+  &__more {
+    font-size: 4lvw;
+  }
+}
+
+.languageButtonContainer {
+  margin: 10lvw 0;
+}
+
+@media screen and (min-width: 1099px) {
+  .Hero {
+    display: flex;
+  }
+
+  .heroBgContainer {
+    height: 100%;
+  }
+
+  .heroBg {
+    width: 50%;
+    height: 100%;
+    margin-left: 50%;
+  }
+
+  .content {
+    width: 40%;
+    padding: 0;
+    height: 100%;
+    top: 0;
+    align-items: flex-start;
+  }
+
+  .title {
+    width: 100%;
+    margin: 4lvw 0 1lvw;
+    font-size: 2.5lvw;
+  }
+
+  .description {
+    width: 100%;
+    font-size: 1.1lvw;
+    margin: 0.5lvw 0;
+    color: #eeeeee;
+  }
+
+  .buttonIcon {
+    margin-right: 0.5lvw;
+    &__linkedin {
+      font-size: 1.1lvw;
+    }
+    &__more {
+      font-size: 1.2lvw;
+    }
+  }
+
+  .profileContainer {
+    width: 24lvw;
+    height: 10lvw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 13lvw;
+    position: absolute;
+    bottom: 6lvw;
+    z-index: 2;
+  }
+
+  .profileContainerTitle {
+    color: white;
+    font-size: 2lvw;
+    font-weight: 400;
+    margin-bottom: 0.5lvw;
+  }
+
+  .profileContainerText {
+    color: #bbbbbb;
+    margin: 0.1lvw 0;
+    font-size: 0.8lvw;
+  }
+}

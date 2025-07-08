@@ -1,0 +1,349 @@
+@use "../../../scss/variables";
+
+.Content {
+  min-height: 100vh;
+  max-height: 100vh;
+  position: relative;
+  overflow: auto;
+}
+
+.contentOverlay {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(6.3px);
+}
+.contentBg {
+  position: fixed;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  background-color: #111111;
+  &__gradientContainer {
+    display: flex;
+    position: absolute;
+    width: 180vw;
+    height: 180vw;
+    overflow: hidden;
+    animation-name: contentBgRotate;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    will-change: transform;
+    & span {
+      position: absolute;
+      display: flex;
+      width: 300%;
+      height: 300%;
+      will-change: transform;
+      animation-name: contentBg;
+      animation-duration: 60s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+  }
+}
+
+@keyframes contentBg {
+  0% {
+    transform: translateX(0%) translateY(0%);
+  }
+  18% {
+    transform: translateX(-10%) translateY(-10%);
+  }
+  20% {
+    transform: translateX(-10%) translateY(-10%);
+  }
+  38% {
+    transform: translateX(-20%) translateY(0%);
+  }
+  40% {
+    transform: translateX(-20%) translateY(0%);
+  }
+  58% {
+    transform: translateX(-40%) translateY(0%);
+  }
+  60% {
+    transform: translateX(-40%) translateY(0%);
+  }
+  78% {
+    transform: translateX(-15%) translateY(-15%);
+  }
+  80% {
+    transform: translateX(-15%) translateY(-15%);
+  }
+  98% {
+    transform: translateX(0%) translateY(0%);
+  }
+  100% {
+    transform: translateX(0%) translateY(0%);
+  }
+}
+@keyframes contentBgRotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  24% {
+    transform: rotateZ(130deg);
+  }
+  26% {
+    transform: rotateZ(130deg);
+  }
+  35% {
+    transform: rotateZ(110deg);
+  }
+  37% {
+    transform: rotateZ(110deg);
+  }
+  58% {
+    transform: rotateZ(220deg);
+  }
+  60% {
+    transform: rotateZ(220deg);
+  }
+  74% {
+    transform: rotateZ(310deg);
+  }
+  76% {
+    transform: rotateZ(310deg);
+  }
+  84% {
+    transform: rotateZ(290deg);
+  }
+  86% {
+    transform: rotateZ(290deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.container {
+  padding: 10lvw 5%;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  position: relative;
+  z-index: 3;
+}
+
+.languageButtonContainer {
+  position: absolute;
+  right: 5%;
+}
+
+.contentMenu {
+  margin-top: 7lvw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  z-index: 3;
+}
+.contentMenuButton {
+  margin: 0 2lvw 3lvw 0;
+  font-size: 3.5lvw;
+  font-weight: 500;
+  border: 2px solid;
+  padding: 1lvw 4lvw;
+  border-radius: 15lvw;
+  opacity: 0.5;
+  transition: 0.3s;
+  cursor: pointer;
+  will-change: opacity;
+  &__inactive {
+    color: variables.$color-variation1-light;
+    &:hover {
+      opacity: 1;
+      color: variables.$color-variation1;
+    }
+  }
+  &__active {
+    opacity: 1;
+    background-color: variables.$color-variation1-dark;
+    border: 2px solid variables.$color-variation1-dark;
+    color: white;
+  }
+}
+
+.buttonIcon {
+  font-size: 5lvw;
+  margin: 0 0.5lvw 0 -0.5lvw;
+}
+
+.description {
+  margin-top: 3lvw;
+  position: relative;
+  z-index: 3;
+  padding-bottom: 30lvw;
+}
+
+.descriptionTitle {
+  font-size: 7lvw;
+  margin: 10lvw 0 2.5lvw;
+  color: white;
+}
+
+.descriptionText {
+  font-size: 4lvw;
+  color: #dddddd;
+}
+
+.certificationText {
+  margin: 1lvw 0;
+  display: flex;
+  align-items: center;
+}
+.checkIcon {
+  font-size: 5lvw;
+  margin-right: 2lvw;
+  color: variables.$color-variation2-light;
+}
+.projectBox {
+  border: 2px solid #555555;
+  border-radius: 8px;
+  margin: 10lvw 0;
+  padding: 5lvw 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.projectImageContainer {
+  width: 85%;
+  min-height: 50lvw;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 0;
+  background-color: #444;
+  position: relative;
+}
+.projectTitle {
+  width: 85%;
+  margin: 2lvw;
+  color: white;
+}
+
+.projectDescription {
+  color: #bbbbbb;
+  width: 85%;
+  margin: 0;
+}
+
+.projectButtonContainer {
+  margin: 10lvw 0 5lvw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 1099px) {
+  .contentBg {
+    &__gradientContainer {
+      width: 110vw;
+      height: 110vw;
+    }
+  }
+
+  .container {
+    border-radius: 16px;
+    padding-top: 2lvw;
+    padding-bottom: 5lvw;
+  }
+
+  .buttonIcon {
+    font-size: 1.3lvw;
+    margin-right: 0.5lvw;
+    transition: 0.3s;
+    will-change: color;
+  }
+
+  .contentMenu {
+    margin: 2lvw 0 1lvw;
+    align-items: flex-start;
+  }
+
+  .contentMenuButton {
+    margin-right: 1lvw;
+    font-size: 1.1lvw;
+    padding: 0.5lvw 1.5lvw;
+    margin-bottom: 0;
+  }
+
+  .description {
+    margin-top: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  .descriptionTitle {
+    font-size: 1.4lvw;
+    margin: 2lvw 0 1lvw;
+  }
+  .descriptionText {
+    font-size: 1lvw;
+  }
+
+  .certificationsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1lvw;
+    margin: 2lvw 0 3lvw;
+  }
+  .certificationText {
+    margin: 0;
+  }
+  .checkIcon {
+    font-size: 1.5lvw;
+    margin-right: 0.5lvw;
+  }
+  .projectsContainer {
+    display: grid;
+    gap: 2lvw;
+    margin-top: 2lvw;
+
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .projectBox {
+    width: 100%;
+    border: 2px solid #555555;
+    border-radius: 8px;
+    margin: 0;
+    padding: 1lvw 0 8lvw;
+    position: relative;
+  }
+
+  .projectImageContainer {
+    min-height: 8lvw;
+    background-color: #444;
+  }
+  .projectTitle {
+    margin: 1lvw 0;
+    color: white;
+  }
+
+  .projectDescription {
+    color: #bbbbbb;
+    margin: 0;
+  }
+
+  .projectButtonContainer {
+    margin: 0;
+    bottom: 2lvw;
+    position: absolute;
+  }
+}

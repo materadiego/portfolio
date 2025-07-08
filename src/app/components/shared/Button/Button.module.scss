@@ -1,0 +1,66 @@
+@use "../../../scss/variables";
+
+.Button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+  font-weight: 500;
+  transition: 0.3s;
+  border-radius: 50lvw;
+  border: 2px solid;
+  will-change: background-color border-color opacity color;
+  &__xsmall {
+    font-size: 3lvw;
+    padding: 1lvw 4lvw;
+  }
+  &__small {
+    font-size: 3lvw;
+    padding: 2lvw 6lvw;
+  }
+  &__big {
+    font-size: 4lvw;
+    padding: 2.5lvw 8lvw;
+  }
+  &__transparentPink {
+    background-color: transparent;
+    border-color: variables.$color-variation1;
+    color: variables.$color-variation1;
+  }
+  &__transparentWhite {
+    background-color: transparent;
+    color: white;
+    opacity: 0.7;
+  }
+}
+
+@media screen and (min-width: 1099px) {
+  .Button {
+    &__xsmall {
+      font-size: 0.9lvw;
+      padding: 0.5lvw 2lvw;
+    }
+    &__small {
+      font-size: 0.9lvw;
+      padding: 0.7lvw 3lvw;
+    }
+    &__big {
+      font-size: 1.1lvw;
+      padding: 1lvw 4lvw;
+    }
+    &__transparentPink {
+      &:hover {
+        background-color: variables.$color-variation1-dark;
+        border-color: variables.$color-variation1-dark;
+        color: white;
+      }
+    }
+    &__transparentWhite {
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

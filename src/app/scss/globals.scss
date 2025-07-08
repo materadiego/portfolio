@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(8, 8, 8);
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+p,
+button {
+  font-family: "Montserrat", sans-serif;
+}
+
+p {
+  line-height: 150%;
+  letter-spacing: 0.01lvw;
+}
+
+@media screen and (min-width: 1099px) {
+  p {
+    line-height: 130%;
+    letter-spacing: 0.01lvw;
+  }
+}
